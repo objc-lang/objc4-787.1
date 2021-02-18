@@ -43,6 +43,21 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		2CAB536325DF03B00057BD91 /* CrashReporterClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CAB534D25DF03B00057BD91 /* CrashReporterClient.h */; };
+		2CAB536425DF03B00057BD91 /* dyldSPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CAB534E25DF03B00057BD91 /* dyldSPI.h */; };
+		2CAB536525DF03B00057BD91 /* restartable.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CAB535025DF03B00057BD91 /* restartable.h */; };
+		2CAB536625DF03B00057BD91 /* Block_private.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CAB535125DF03B00057BD91 /* Block_private.h */; };
+		2CAB536725DF03B00057BD91 /* _simple.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CAB535225DF03B00057BD91 /* _simple.h */; };
+		2CAB536825DF03B00057BD91 /* spinlock_private.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CAB535425DF03B00057BD91 /* spinlock_private.h */; };
+		2CAB536925DF03B00057BD91 /* tsd_private.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CAB535525DF03B00057BD91 /* tsd_private.h */; };
+		2CAB536A25DF03B10057BD91 /* pthread_machdep.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CAB535725DF03B00057BD91 /* pthread_machdep.h */; };
+		2CAB536B25DF03B10057BD91 /* cpu_capabilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CAB535925DF03B00057BD91 /* cpu_capabilities.h */; };
+		2CAB536C25DF03B10057BD91 /* reason.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CAB535B25DF03B00057BD91 /* reason.h */; };
+		2CAB536D25DF03B10057BD91 /* lock_private.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CAB535D25DF03B00057BD91 /* lock_private.h */; };
+		2CAB536E25DF03B10057BD91 /* tsd.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CAB535E25DF03B00057BD91 /* tsd.h */; };
+		2CAB536F25DF03B10057BD91 /* base_private.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CAB535F25DF03B00057BD91 /* base_private.h */; };
+		2CAB537025DF03B10057BD91 /* objc-shared-cache.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CAB536025DF03B00057BD91 /* objc-shared-cache.h */; };
+		2CAB537125DF03B10057BD91 /* dyld_priv.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CAB536225DF03B00057BD91 /* dyld_priv.h */; };
 		393CEAC00DC69E3E000B69DE /* objc-references.mm in Sources */ = {isa = PBXBuildFile; fileRef = 393CEABF0DC69E3E000B69DE /* objc-references.mm */; };
 		393CEAC60DC69E67000B69DE /* objc-references.h in Headers */ = {isa = PBXBuildFile; fileRef = 393CEAC50DC69E67000B69DE /* objc-references.h */; };
 		39ABD72312F0B61800D1054C /* objc-weak.h in Headers */ = {isa = PBXBuildFile; fileRef = 39ABD71F12F0B61800D1054C /* objc-weak.h */; };
@@ -193,6 +208,21 @@
 
 /* Begin PBXFileReference section */
 		2CAB534625DEC29A0057BD91 /* Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Base.xcconfig; sourceTree = "<group>"; };
+		2CAB534D25DF03B00057BD91 /* CrashReporterClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrashReporterClient.h; sourceTree = "<group>"; };
+		2CAB534E25DF03B00057BD91 /* dyldSPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dyldSPI.h; sourceTree = "<group>"; };
+		2CAB535025DF03B00057BD91 /* restartable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = restartable.h; sourceTree = "<group>"; };
+		2CAB535125DF03B00057BD91 /* Block_private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Block_private.h; sourceTree = "<group>"; };
+		2CAB535225DF03B00057BD91 /* _simple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _simple.h; sourceTree = "<group>"; };
+		2CAB535425DF03B00057BD91 /* spinlock_private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = spinlock_private.h; sourceTree = "<group>"; };
+		2CAB535525DF03B00057BD91 /* tsd_private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tsd_private.h; sourceTree = "<group>"; };
+		2CAB535725DF03B00057BD91 /* pthread_machdep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pthread_machdep.h; sourceTree = "<group>"; };
+		2CAB535925DF03B00057BD91 /* cpu_capabilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpu_capabilities.h; sourceTree = "<group>"; };
+		2CAB535B25DF03B00057BD91 /* reason.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = reason.h; sourceTree = "<group>"; };
+		2CAB535D25DF03B00057BD91 /* lock_private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lock_private.h; sourceTree = "<group>"; };
+		2CAB535E25DF03B00057BD91 /* tsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tsd.h; sourceTree = "<group>"; };
+		2CAB535F25DF03B00057BD91 /* base_private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base_private.h; sourceTree = "<group>"; };
+		2CAB536025DF03B00057BD91 /* objc-shared-cache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "objc-shared-cache.h"; sourceTree = "<group>"; };
+		2CAB536225DF03B00057BD91 /* dyld_priv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dyld_priv.h; sourceTree = "<group>"; };
 		393CEABF0DC69E3E000B69DE /* objc-references.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "objc-references.mm"; path = "runtime/objc-references.mm"; sourceTree = "<group>"; };
 		393CEAC50DC69E67000B69DE /* objc-references.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "objc-references.h"; path = "runtime/objc-references.h"; sourceTree = "<group>"; };
 		39ABD71F12F0B61800D1054C /* objc-weak.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "objc-weak.h"; path = "runtime/objc-weak.h"; sourceTree = "<group>"; };
@@ -344,6 +374,7 @@
 		08FB7794FE84155DC02AAC07 /* objc */ = {
 			isa = PBXGroup;
 			children = (
+				2CAB534C25DF03B00057BD91 /* headers */,
 				2CAB534525DEC2890057BD91 /* configs */,
 				BC8B5D1212D3D48100C78A5B /* libauto.dylib */,
 				838485C60D6D687700CEA253 /* Public Headers */,
@@ -428,6 +459,84 @@
 				2CAB534625DEC29A0057BD91 /* Base.xcconfig */,
 			);
 			path = configs;
+			sourceTree = "<group>";
+		};
+		2CAB534C25DF03B00057BD91 /* headers */ = {
+			isa = PBXGroup;
+			children = (
+				2CAB534D25DF03B00057BD91 /* CrashReporterClient.h */,
+				2CAB534E25DF03B00057BD91 /* dyldSPI.h */,
+				2CAB534F25DF03B00057BD91 /* kern */,
+				2CAB535125DF03B00057BD91 /* Block_private.h */,
+				2CAB535225DF03B00057BD91 /* _simple.h */,
+				2CAB535325DF03B00057BD91 /* pthread */,
+				2CAB535625DF03B00057BD91 /* System */,
+				2CAB535A25DF03B00057BD91 /* sys */,
+				2CAB535C25DF03B00057BD91 /* os */,
+				2CAB536025DF03B00057BD91 /* objc-shared-cache.h */,
+				2CAB536125DF03B00057BD91 /* mach-o */,
+			);
+			path = headers;
+			sourceTree = "<group>";
+		};
+		2CAB534F25DF03B00057BD91 /* kern */ = {
+			isa = PBXGroup;
+			children = (
+				2CAB535025DF03B00057BD91 /* restartable.h */,
+			);
+			path = kern;
+			sourceTree = "<group>";
+		};
+		2CAB535325DF03B00057BD91 /* pthread */ = {
+			isa = PBXGroup;
+			children = (
+				2CAB535425DF03B00057BD91 /* spinlock_private.h */,
+				2CAB535525DF03B00057BD91 /* tsd_private.h */,
+			);
+			path = pthread;
+			sourceTree = "<group>";
+		};
+		2CAB535625DF03B00057BD91 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				2CAB535725DF03B00057BD91 /* pthread_machdep.h */,
+				2CAB535825DF03B00057BD91 /* machine */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
+		2CAB535825DF03B00057BD91 /* machine */ = {
+			isa = PBXGroup;
+			children = (
+				2CAB535925DF03B00057BD91 /* cpu_capabilities.h */,
+			);
+			path = machine;
+			sourceTree = "<group>";
+		};
+		2CAB535A25DF03B00057BD91 /* sys */ = {
+			isa = PBXGroup;
+			children = (
+				2CAB535B25DF03B00057BD91 /* reason.h */,
+			);
+			path = sys;
+			sourceTree = "<group>";
+		};
+		2CAB535C25DF03B00057BD91 /* os */ = {
+			isa = PBXGroup;
+			children = (
+				2CAB535D25DF03B00057BD91 /* lock_private.h */,
+				2CAB535E25DF03B00057BD91 /* tsd.h */,
+				2CAB535F25DF03B00057BD91 /* base_private.h */,
+			);
+			path = os;
+			sourceTree = "<group>";
+		};
+		2CAB536125DF03B00057BD91 /* mach-o */ = {
+			isa = PBXGroup;
+			children = (
+				2CAB536225DF03B00057BD91 /* dyld_priv.h */,
+			);
+			path = "mach-o";
 			sourceTree = "<group>";
 		};
 		6EF877D82325D62600963DBB /* objcdt */ = {
@@ -574,8 +683,12 @@
 				75A95051202BAA9A00D7D56F /* objc-locks.h in Headers */,
 				6E1475ED21DFDB1B001357EA /* llvm-type_traits.h in Headers */,
 				83A4AEDC1EA0840800ACADDE /* module.modulemap in Headers */,
+				2CAB536A25DF03B10057BD91 /* pthread_machdep.h in Headers */,
 				830F2A980D738DC200392440 /* hashtable.h in Headers */,
+				2CAB536825DF03B00057BD91 /* spinlock_private.h in Headers */,
 				6EACB842232C97A400CE9176 /* objc-zalloc.h in Headers */,
+				2CAB536F25DF03B10057BD91 /* base_private.h in Headers */,
+				2CAB537125DF03B10057BD91 /* dyld_priv.h in Headers */,
 				6E1475EA21DFDB1B001357EA /* llvm-AlignOf.h in Headers */,
 				838485BF0D6D687300CEA253 /* hashtable2.h in Headers */,
 				6E1475EC21DFDB1B001357EA /* llvm-DenseMapInfo.h in Headers */,
@@ -586,8 +699,13 @@
 				834EC0A411614167009B2563 /* objc-abi.h in Headers */,
 				838485EF0D6D68A200CEA253 /* objc-api.h in Headers */,
 				838485F00D6D68A200CEA253 /* objc-auto.h in Headers */,
+				2CAB536C25DF03B10057BD91 /* reason.h in Headers */,
+				2CAB537025DF03B10057BD91 /* objc-shared-cache.h in Headers */,
+				2CAB536425DF03B00057BD91 /* dyldSPI.h in Headers */,
 				838485F40D6D68A200CEA253 /* objc-class.h in Headers */,
+				2CAB536625DF03B00057BD91 /* Block_private.h in Headers */,
 				838485F60D6D68A200CEA253 /* objc-config.h in Headers */,
+				2CAB536B25DF03B10057BD91 /* cpu_capabilities.h in Headers */,
 				6E1475EE21DFDB1B001357EA /* llvm-MathExtras.h in Headers */,
 				838485F80D6D68A200CEA253 /* objc-exception.h in Headers */,
 				83BE02E80FCCB24D00661494 /* objc-file-old.h in Headers */,
@@ -597,20 +715,25 @@
 				838485FB0D6D68A200CEA253 /* objc-initialize.h in Headers */,
 				7593EC58202248E50046AB96 /* objc-object.h in Headers */,
 				83112ED40F00599600A5FBAF /* objc-internal.h in Headers */,
+				2CAB536D25DF03B10057BD91 /* lock_private.h in Headers */,
 				838485FE0D6D68A200CEA253 /* objc-load.h in Headers */,
 				838486000D6D68A200CEA253 /* objc-loadmethod.h in Headers */,
 				75A95053202BAC4100D7D56F /* objc-lockdebug.h in Headers */,
 				831C85D50E10CF850066E64C /* objc-os.h in Headers */,
+				2CAB536E25DF03B10057BD91 /* tsd.h in Headers */,
 				838486030D6D68A200CEA253 /* objc-private.h in Headers */,
 				393CEAC60DC69E67000B69DE /* objc-references.h in Headers */,
+				2CAB536925DF03B00057BD91 /* tsd_private.h in Headers */,
 				6E1475EB21DFDB1B001357EA /* llvm-DenseMap.h in Headers */,
 				838486070D6D68A200CEA253 /* objc-runtime-new.h in Headers */,
 				83BE02EA0FCCB24D00661494 /* objc-runtime-old.h in Headers */,
 				8384860A0D6D68A200CEA253 /* objc-runtime.h in Headers */,
+				2CAB536725DF03B00057BD91 /* _simple.h in Headers */,
 				8384860C0D6D68A200CEA253 /* objc-sel-set.h in Headers */,
 				6E7B0862232DE7CA00689009 /* PointerUnion.h in Headers */,
 				7213C36321FA7C730090A271 /* NSObject-internal.h in Headers */,
 				838486100D6D68A200CEA253 /* objc-sync.h in Headers */,
+				2CAB536325DF03B00057BD91 /* CrashReporterClient.h in Headers */,
 				83D92696212254CF00299F69 /* isa.h in Headers */,
 				838486130D6D68A200CEA253 /* objc.h in Headers */,
 				83D9269821225A7400299F69 /* arm64-asm.h in Headers */,
@@ -618,6 +741,7 @@
 				8384861E0D6D68A800CEA253 /* Protocol.h in Headers */,
 				838486200D6D68A800CEA253 /* runtime.h in Headers */,
 				39ABD72312F0B61800D1054C /* objc-weak.h in Headers */,
+				2CAB536525DF03B00057BD91 /* restartable.h in Headers */,
 				83F4B52815E843B100E0926F /* NSObjCRuntime.h in Headers */,
 				C22F5208230EF38B001BFE14 /* objc-ptrauth.h in Headers */,
 				6ECD0B1F2244999E00910D88 /* llvm-DenseSet.h in Headers */,
@@ -745,7 +869,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -x\n/usr/bin/xcrun -sdk macosx.internal clang++ -Wall -mmacosx-version-min=10.12 -arch x86_64 -std=c++11 \"${SRCROOT}/markgc.cpp\" -o \"${BUILT_PRODUCTS_DIR}/markgc\"\n\"${BUILT_PRODUCTS_DIR}/markgc\" \"${BUILT_PRODUCTS_DIR}/libobjc.A.dylib\"";
+			shellScript = "set -x\n/usr/bin/xcrun -sdk ${SDKROOT} clang++ -Wall -mmacosx-version-min=10.12 -arch x86_64 -std=c++11 \"${SRCROOT}/markgc.cpp\" -o \"${BUILT_PRODUCTS_DIR}/markgc\"\n\"${BUILT_PRODUCTS_DIR}/markgc\" \"${BUILT_PRODUCTS_DIR}/libobjc.A.dylib\"\n";
 		};
 		830F2AFA0D73BC5800392440 /* Run Script (symlink) */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -898,8 +1022,6 @@
 				INSTALL_PATH = /usr/lib;
 				IS_ZIPPERED = YES;
 				LLVM_LTO = NO;
-				ORDER_FILE = "$(SDKROOT)/AppleInternal/OrderFiles/libobjc.order";
-				"ORDER_FILE[sdk=iphonesimulator*]" = "";
 				OTHER_CFLAGS = (
 					"-fdollars-in-identifiers",
 					"-fno-objc-convert-messages-to-runtime-calls",
@@ -929,7 +1051,6 @@
 					interposable.txt,
 				);
 				"OTHER_LDFLAGS[sdk=macosx*]" = (
-					"-lCrashReporterClient",
 					"-lc++abi",
 					"-Xlinker",
 					"-sectalign",
@@ -974,8 +1095,6 @@
 				);
 				INSTALL_PATH = /usr/lib;
 				IS_ZIPPERED = YES;
-				ORDER_FILE = "$(SDKROOT)/AppleInternal/OrderFiles/libobjc.order";
-				"ORDER_FILE[sdk=iphonesimulator*]" = "";
 				OTHER_CFLAGS = (
 					"-fdollars-in-identifiers",
 					"-fno-objc-convert-messages-to-runtime-calls",
@@ -1005,7 +1124,6 @@
 					interposable.txt,
 				);
 				"OTHER_LDFLAGS[sdk=macosx*]" = (
-					"-lCrashReporterClient",
 					"-lc++abi",
 					"-Xlinker",
 					"-sectalign",
@@ -1047,10 +1165,6 @@
 				GCC_ENABLE_CPP_RTTI = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"OS_OBJECT_USE_OBJC=0",
-					"OBJC_IS_DEBUG_BUILD=1",
-				);
 				GCC_STRICT_ALIASING = YES;
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -1092,10 +1206,6 @@
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
 				GCC_ENABLE_CPP_RTTI = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"OS_OBJECT_USE_OBJC=0",
-					"NDEBUG=1",
-				);
 				GCC_STRICT_ALIASING = YES;
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;

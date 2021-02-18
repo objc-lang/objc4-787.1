@@ -1,15 +1,15 @@
 /*
  * Copyright (c) 1999-2007 Apple Inc.  All Rights Reserved.
- * 
+ *
  * @APPLE_LICENSE_HEADER_START@
- * 
+ *
  * This file contains Original Code and/or Modifications of Original Code
  * as defined in and that are subject to the Apple Public Source License
  * Version 2.0 (the 'License'). You may not use this file except in
  * compliance with the License. Please obtain a copy of the License at
  * http://www.opensource.apple.com/apsl/ and read it before using this
  * file.
- * 
+ *
  * The Original Code and all software distributed under the License are
  * distributed on an 'AS IS' basis, WITHOUT WARRANTY OF ANY KIND, EITHER
  * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
@@ -17,7 +17,7 @@
  * FITNESS FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT.
  * Please see the License for the specific language governing rights and
  * limitations under the License.
- * 
+ *
  * @APPLE_LICENSE_HEADER_END@
  */
 /*
@@ -30,7 +30,7 @@
 
 #include "objc-config.h"
 
-/* Isolate ourselves from the definitions of id and Class in the compiler 
+/* Isolate ourselves from the definitions of id and Class in the compiler
  * and public headers.
  */
 
@@ -45,6 +45,8 @@
 #include <cstddef>  // for nullptr_t
 #include <stdint.h>
 #include <assert.h>
+
+#include <dyldSPI.h>
 
 // An assert that's disabled for release builds but still ensures the expression compiles.
 #ifdef NDEBUG
@@ -95,7 +97,7 @@ public:
 
     // getIsa() allows this to be a tagged pointer object
     Class getIsa();
-    
+
     uintptr_t isaBits() const;
 
     // initIsa() should be used to init the isa of new objects only.
@@ -474,7 +476,7 @@ public:
     SEL *selrefs;
     size_t selrefCount;
     struct objc_class **clsrefs;
-    size_t clsrefCount;    
+    size_t clsrefCount;
     TCHAR *moduleName;
 # endif
 #endif
@@ -621,7 +623,7 @@ class monitor_locker_t : nocopy_t {
 class recursive_mutex_locker_t : nocopy_t {
     recursive_mutex_t& lock;
   public:
-    recursive_mutex_locker_t(recursive_mutex_t& newLock) 
+    recursive_mutex_locker_t(recursive_mutex_t& newLock)
         : lock(newLock) { lock.lock(); }
     ~recursive_mutex_locker_t() { lock.unlock(); }
 };
@@ -662,7 +664,7 @@ typedef struct {
     unsigned classNameLookupsAllocated;
     unsigned classNameLookupsUsed;
 
-    // If you add new fields here, don't forget to update 
+    // If you add new fields here, don't forget to update
     // _objc_pthread_destroyspecific()
 
 } _objc_pthread_data;
@@ -705,7 +707,7 @@ extern void layout_bitmap_set_ivar(layout_bitmap bits, const char *type, size_t 
 extern void layout_bitmap_grow(layout_bitmap *bits, size_t newCount);
 extern void layout_bitmap_slide(layout_bitmap *bits, size_t oldPos, size_t newPos);
 extern void layout_bitmap_slide_anywhere(layout_bitmap *bits, size_t oldPos, size_t newPos);
-extern bool layout_bitmap_splat(layout_bitmap dst, layout_bitmap src, 
+extern bool layout_bitmap_splat(layout_bitmap dst, layout_bitmap src,
                                 size_t oldSrcInstanceSize);
 extern bool layout_bitmap_or(layout_bitmap dst, layout_bitmap src, const char *msg);
 extern bool layout_bitmap_clear(layout_bitmap dst, layout_bitmap src, const char *msg);
@@ -768,7 +770,7 @@ __END_DECLS
 #   define _STATIC_ASSERT3(x, line)                                     \
         typedef struct {                                                \
             int _static_assert[(x) ? 0 : -1];                           \
-        } _static_assert_ ## line __attribute__((unavailable)) 
+        } _static_assert_ ## line __attribute__((unavailable))
 #endif
 
 #define countof(arr) (sizeof(arr) / sizeof((arr)[0]))
@@ -797,8 +799,8 @@ static inline T exp2u(T x) {
 }
 
 template <typename T>
-static T exp2m1u(T x) { 
-    return (1 << x) - 1; 
+static T exp2m1u(T x) {
+    return (1 << x) - 1;
 }
 
 #endif
@@ -836,9 +838,9 @@ class TimeLogger {
     uint64_t mStart;
     bool mRecord;
  public:
-    TimeLogger(bool record = true) 
+    TimeLogger(bool record = true)
      : mStart(nanoseconds())
-     , mRecord(record) 
+     , mRecord(record)
     { }
 
     void log(const char *msg) {
@@ -852,8 +854,8 @@ class TimeLogger {
 
 enum { CacheLineSize = 64 };
 
-// StripedMap<T> is a map of void* -> T, sized appropriately 
-// for cache-friendly lock striping. 
+// StripedMap<T> is a map of void* -> T, sized appropriately
+// for cache-friendly lock striping.
 // For example, this may be used as StripedMap<spinlock_t>
 // or as StripedMap<SomeStruct> where SomeStruct stores a spin lock.
 template<typename T>
@@ -876,11 +878,11 @@ class StripedMap {
     }
 
  public:
-    T& operator[] (const void *p) { 
-        return array[indexForPointer(p)].value; 
+    T& operator[] (const void *p) {
+        return array[indexForPointer(p)].value;
     }
-    const T& operator[] (const void *p) const { 
-        return const_cast<StripedMap<T>>(this)[p]; 
+    const T& operator[] (const void *p) const {
+        return const_cast<StripedMap<T>>(this)[p];
     }
 
     // Shortcuts for StripedMaps of locks.
@@ -922,7 +924,7 @@ class StripedMap {
         if (i < StripeCount) return &array[i].value;
         else return nil;
     }
-    
+
 #if DEBUG
     StripedMap() {
         // Verify alignment expectations.
@@ -937,9 +939,9 @@ class StripedMap {
 };
 
 
-// DisguisedPtr<T> acts like pointer type T*, except the 
+// DisguisedPtr<T> acts like pointer type T*, except the
 // stored value is disguised to hide it from tools like `leaks`.
-// nil is disguised as itself so zero-filled memory works as expected, 
+// nil is disguised as itself so zero-filled memory works as expected,
 // which means 0x80..00 is also disguised as itself but we don't care.
 // Note that weak_entry_t knows about this encoding.
 template <typename T>
@@ -956,9 +958,9 @@ class DisguisedPtr {
 
  public:
     DisguisedPtr() { }
-    DisguisedPtr(T* ptr) 
+    DisguisedPtr(T* ptr)
         : value(disguise(ptr)) { }
-    DisguisedPtr(const DisguisedPtr<T>& ptr) 
+    DisguisedPtr(const DisguisedPtr<T>& ptr)
         : value(ptr.value) { }
 
     DisguisedPtr<T>& operator = (T* rhs) {
@@ -973,17 +975,17 @@ class DisguisedPtr {
     operator T* () const {
         return undisguise(value);
     }
-    T* operator -> () const { 
+    T* operator -> () const {
         return undisguise(value);
     }
-    T& operator * () const { 
+    T& operator * () const {
         return *undisguise(value);
     }
     T& operator [] (size_t i) const {
         return undisguise(value)[i];
     }
 
-    // pointer arithmetic operators omitted 
+    // pointer arithmetic operators omitted
     // because we don't currently use them anywhere
 };
 
@@ -1042,14 +1044,14 @@ public:
 template <typename T, unsigned InlineCount>
 class GlobalSmallVector {
     static_assert(std::is_pod<T>::value, "SmallVector requires POD types");
-    
+
 protected:
     unsigned count{0};
     union {
         T inlineElements[InlineCount];
         T *elements{nullptr};
     };
-    
+
 public:
     void append(const T &val) {
         if (count < InlineCount) {
@@ -1068,11 +1070,11 @@ public:
         }
         count++;
     }
-    
+
     const T *begin() const {
         return count <= InlineCount ? inlineElements : elements;
     }
-    
+
     const T *end() const {
         return begin() + count;
     }
@@ -1100,7 +1102,7 @@ public:
 };
 
 // Pointer hash function.
-// This is not a terrific hash, but it is fast 
+// This is not a terrific hash, but it is fast
 // and not outrageously flawed for our purposes.
 
 // Based on principles from http://locklessinc.com/articles/fast_hash/
@@ -1157,4 +1159,3 @@ static uint32_t ptr_hash(uint32_t key)
 #include "objc-object.h"
 
 #endif /* _OBJC_PRIVATE_H_ */
-
