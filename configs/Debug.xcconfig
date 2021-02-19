@@ -1,0 +1,13 @@
+//
+//  Debug.xcconfig
+//  objc
+//
+//  Created by Eddie Hillenbrand on 2/18/21.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+#include "Base.xcconfig"
+
+GCC_PREPROCESSOR_DEFINITIONS = DEBUG=1 $(inherited)
